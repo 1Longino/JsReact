@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template Literals Bajo la Consola</title>
+</head>
+<body>
+    <script>
+        const name = 'Luis Enrique'
+        const edad = 23
+        console.log(`Hola mi nombre es ${name} y mi edad es ${edad}`)
+        console.log(`Hola mi nombre es ${name} 
+                    el doble de mi edad es ${edad * 2}`) //realizando operaciones dentro de template literal con expresiones
+        console.log(`${[1,2,3,4].map(n => n * 50).join(' ', )}`)// REcorrido de array con map
+        console.log(`el valor de mi variable es: ${x = 'value of my variable'}`)//creado una variable dentro del template literal
+        console.log(`creando my funcion: ${(function getName() {return 'I m programming'})()}`)//creado una variable dentro del template literal
+    </script>
+</body>
+</html>

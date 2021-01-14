@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All About Funcitons</title>
+    <script>
+        /**
+         * ----Cuando se tiene una solo parametro en las arrow functions es posible evitar colocar entre parentesis
+         * ----Cuando no hay parametro en una arrow function es posibl agrgar u guien bajo en reemplazo a parametros
+         * ----HOISTING: Invocar a una funciton antes de declararla 
+         * 
+        */
+    </script>
+</head>
+<body>
+    <script>
+        function myFunction(param){
+           console.log(`Creating a function with params ${param}`)
+        }
+        var arrowFunction = (hello) => {
+            console.log(`Creating a Arrow function Anonymous with param ${hello}`)
+        }
+
+        functionhoisting()
+        function functionhoisting(){
+            return 'Retornando function con Hoisting';
+        }
+        myFunction(`estos son mis parametros`);
+        arrowFunction`parametros de Arrow Function`;
+
+        function coutador (){
+            this.seg  = 0
+            setInterval(() =>{
+                this.seg++
+                console.log(this.seg)
+            }, 1000)
+        }
+        new coutador()
+    </script>
+</body>
+</html>

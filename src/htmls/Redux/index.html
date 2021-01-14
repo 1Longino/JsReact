@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function createStore(reducer, initialState){
+            var state = initialState
+            let actualizador = () => {}
+            const getstate = _ => state
+            const dispatch = (action) => {
+                state = reducer(state,action)
+                actualizador()
+            }
+            const subscribe = (change) => {
+                actualizador = change
+            }
+            return {
+                getstate,
+                dispatch,
+                subscribe
+            }
+
+        }
+        const reducer = (state, action) =>{
+            return state
+        }
+
+        const store = createStore(reducer, 'Estado Inicial de mi App Payp')
+        //getState
+        //disPatch
+        //Suscribe
+        store.subscribe(() => {
+            console.log('Han habido cambios en el state', store.getstate())
+        })
+        store.dispatch('CAbios a realizar')
+    </script>
+</body>
+</html>

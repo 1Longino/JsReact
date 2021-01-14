@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        {/*
+            -Class STyled Components
+            -Utuliza tagged templates para generar estilos
+            -Podemos asignar el nombre de una funcion al valor de una funcion
+        */}
+    </script>
+</head>
+<body>
+    <script>
+        function componete(strings, ...AccedienteValoresDinamicos){
+            return function(parametros){
+                let copiaDeStrings = strings.slice()
+                console.log(copiaDeStrings)
+                AccedienteValoresDinamicos.forEach((value, index) => {
+                    copiaDeStrings[index] += parametros[value]
+                })
+                return copiaDeStrings.join('')
+            } 
+        }
+        //const valoresAMostrar = componete`Enviar una cadena ${'de Strings'} con cantidad de parametroa${'2'}}` Lo que se realizó con tagged templates
+        const parametros = {
+            message : 'No te rindas',
+            name: 'Luis Enrique',
+        }
+
+        function recorriendoTags(tags) {
+            let object = {}
+            tags.forEach((tag) => object[tag] = (estilo) => {
+                return function (contenido) {
+                    return `<${tag} style="${estilo}">${contenido}</${tag}>`
+                }
+            })
+        }
+
+        const Title = styled.div`
+            color: red;
+            font-family: system-ui;
+            font-size: 60px;
+            color: orange;
+            text-shadow: 2px 9px 0 black;
+        `
+        const styled = recorriendoTags(tags)
+
+        const tags = ["div",'h1',"h3","h4","h5","p","br","hr"];
+
+        const valueShow  = componete`<div><h1> ${'message'} ${'name'} </h1></div>`(parametros)
+
+        function funciionContenedor(cadenaARenderizar, contenedor){
+            contenedor.innerHTML = cadenaARenderizar
+        }
+
+        funciionContenedor(Title(valueShow), document.body)
+    </script>
+</body>
+</html>

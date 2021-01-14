@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tagged Template</title>
+</head>
+<body>
+    <script>
+        let newString = '';
+        function cachorros(strings, props){
+            strings.forEach((element, index) => {
+                const params = props[index] ? `<strong>${props}</strong>` : ''
+                newString += `${element} ${params}`
+            });
+            return newString
+        }
+
+        const msg = cachorros`cuestion de ${'tiempo perserverancia dedicacion'} para un buen ${'resultado'}`;
+        document.body.innerHTML = msg;
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+</head>
+<body>
+    <marquee><h1>Welcome to Car Cations</h1></marquee>
+    <img src="https://www.bing.com/images/blob?bcid=TxfYNNDDZTYCvA" style="width:200px;height:150px;">
+    <img src="https://www.bing.com/images/blob?bcid=TxfYNNDDZTYCvA" style="width:200px;height:150px;">
+    <strong>Precio: </strong><span id="price">-</span>
+    <strong>Cantidad:</strong><span id="cantidad">-</span>
+    <strong>Total:</strong><span id="total">-</span>
+    <button class="button" id="getTotal" style="background-color: aqua;">
+        Total
+    </button>
+    <script>
+        const price = 3000
+        const cantidad = 2 
+        const car = {
+            price,
+            cantidad,
+            set TotalNeto(res){
+                this.Total = res
+            }
+        }
+
+        window.price.textContent = car.price
+        window.cantidad.textContent = car.cantidad
+        car.TotalNeto = (car.price*car.cantidad)
+        window.getTotal.addEventListener('click',() => {
+            window.total.textContent = car.Total
+        })        
+        
+    </script>
+   
+</body>
+</html>
